@@ -4,10 +4,14 @@ import { CiMail } from "react-icons/ci";
 import { SlLocationPin } from "react-icons/sl";
 import { sendEmailAction } from "../hooks/actions";
 
-const Contato: React.FC = () => {
+interface IContato{
+    id: string
+}
+
+const Contato: React.FC<IContato> = ({id}) => {
 
     return (
-        <section className="w-full my-6 text-gray-200">
+        <section id={id} className="w-full my-6 text-gray-200">
             <h1 className="text-3xl text-center mb-6 font-semibold">Contato</h1>
 
             <div className="flex gap-10 justify-around">

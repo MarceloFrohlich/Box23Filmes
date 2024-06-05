@@ -11,11 +11,12 @@ const Header:React.FC = () => {
             </div>
             <nav className='text-gray-300 flex items-center'>
                 <ul className='flex gap-8 lg:text-xl font-semibold'>
-                    <Link href={'/'}>Home</Link>
-                    <Link href={'/pages/trajetoria'}>Trajetória</Link>
-                    <Link href={'/'}>Cases</Link>
-                    <Link href={'/'}>Contato</Link>
-                    <Link className='mt-1'
+                    <Link className='hover:text-red-600 duration-300 hover:scale-110' href={'/'}>Home</Link>
+                    <Link className='hover:text-red-600 duration-300 hover:scale-110' href={'/pages/trajetoria'}>Trajetória</Link>
+                    <Link className='hover:text-red-600 duration-300 hover:scale-110' href={'/pages/cases'}>Cases</Link>
+                    <Link className='hover:text-red-600 duration-300 hover:scale-110' href={'/'}>Serviços</Link>
+                    <Link className='hover:text-red-600 duration-300 hover:scale-110' href="#contato">Contato</Link>
+                    <Link className='mt-1 hover:text-red-600 duration-300 hover:scale-110'
                     href='https://www.instagram.com/box23filmes/' 
                     target='_blank'>
                         <SlSocialInstagram/>

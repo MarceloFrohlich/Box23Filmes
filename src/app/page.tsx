@@ -7,7 +7,7 @@ export default function Home() {
     <main>
       <Banner/>
       <Sobre />
-      <Contato />
+      <Contato id="contato" />
 
     </main>
   );
