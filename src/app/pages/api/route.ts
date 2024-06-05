@@ -42,6 +42,8 @@ export async function POST(req: NextRequest) {
                           style="margin: 0 auto; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); border-radius: 8px;">
                           <tr>
                               <td align="center" style="padding: 20px;">
+                                <img src="https://marcelo-nextjs-teste-projeto.s3.us-east-2.amazonaws.com/boxLogo.png"
+                                  alt="MostraGlass Logo" style="max-width: 80%; height: auto;">
                                   <h1 style="margin: 20px 0;">Novo email de contato!</h1>
                               </td>
                           </tr>
