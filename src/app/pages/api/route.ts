@@ -1,51 +1,21 @@
-// src/app/pages/api/route.ts
-
 import { NextRequest, NextResponse } from 'next/server';
-import nodemailer from 'nodemailer';
+import sendgrid from '@sendgrid/mail';
 
-// Handler para requisições POST
+sendgrid.setApiKey(process.env.NEXT_PUBLIC_SENDGRID_API_KEY as string);
+
 export async function POST(req: NextRequest) {
   try {
-    const { nome, telefone, mensagem, email } = await req.json();
+    const { nome, email, telefone, mensagem } = await req.json();
 
-    if (!nome || !telefone || !mensagem || !email) {
-      return NextResponse.json({ error: 'Todos os campos são obrigatórios' }, { status: 400 });
-    }
+    const msg = {
+      to: 'destinatario@example.com', // Substitua pelo email do destinatário
+      from: 'seu-email-verificado@example.com', // Substitua pelo seu email verificado no SendGrid
+      subject: `Nova mensagem de contato de ${nome}`,
+      text: `Nome: ${nome}\nEmail: ${email}\nTelefone: ${telefone}\n\nMensagem:\n${mensagem}`,
+    };
 
-    // Configuração do transporter do Nodemailer
-    const transporter = nodemailer.createTransport({
-      service: 'Gmail',
-      host: 'smtp.gmail.com',
-      port: 465,
-      auth: {
-        user: '',
-        pass: '',
-      },
-    });
-
-    transporter.verify(function (error, success) {
-      if (error) {
-        console.log(error);
-      } else {
-        console.log("Server is ready to take our messages");
-      }
-    });
-
-    await transporter.sendMail({
-      from: email,
-      to: 'm.frohlich5@gmail.com',
-      subject: `Novo contato de: ${nome}`,
-      text: `
-        Você recebeu uma nova mensagem de contato pelo site:
-
-        Nome: ${nome}
-        Telefone: ${telefone}
-        Email: ${email}
-        Mensagem: ${mensagem}
-      `,
-    });
-
-    return NextResponse.json({ message: 'Email enviado com sucesso' }, { status: 200 });
+    await sendgrid.send(msg);
+    return NextResponse.json({ success: true }, { status: 200 });
   } catch (error) {
     console.error('Erro ao enviar email:', error);
     return NextResponse.json({ error: 'Erro ao enviar email' }, { status: 500 });
