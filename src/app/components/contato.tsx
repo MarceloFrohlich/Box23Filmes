@@ -2,12 +2,19 @@
 import { LuPhone } from "react-icons/lu";
 import { CiMail } from "react-icons/ci";
 import { SlLocationPin } from "react-icons/sl";
-import { submitEmail } from "../hooks/api";
+import { submitEmail, receive } from "../hooks/api";
+
+interface EmailSendData {
+    nome: string | FormDataEntryValue | null;
+    telefone: string | FormDataEntryValue | null;
+    mensagem: string | FormDataEntryValue | null;
+    email: string | FormDataEntryValue | null;
+}
 
 const Contato: React.FC = () => {
 
    async function sendEmailAction(formData: FormData) {
-        const email = {
+        const email:EmailSendData = {
             nome: formData.get('nome'),
             email: formData.get('email'),
             mensagem: formData.get('mensagem'),
