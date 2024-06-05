@@ -12,7 +12,7 @@ const Header:React.FC = () => {
             <nav className='text-gray-300 flex items-center'>
                 <ul className='flex gap-8 lg:text-xl font-semibold'>
                     <Link href={'/'}>Home</Link>
-                    <Link href={'/trajetoria'}>Trajetória</Link>
+                    <Link href={'/pages/trajetoria'}>Trajetória</Link>
                     <Link href={'/'}>Cases</Link>
                     <Link href={'/'}>Contato</Link>
                     <Link className='mt-1'
