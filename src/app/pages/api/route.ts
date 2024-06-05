@@ -54,6 +54,7 @@ export async function POST(req: NextRequest) {
                                   <p style="text-align: start; font-size: 18px;;">Nome: ${nome}</p>
                                   <p style="text-align: start; font-size: 18px;;">Telefone: ${telefone}</p>
                                   <p style="text-align: start; font-size: 18px;;">Email: ${email}</p>
+                                  <p style="text-align: start; font-size: 18px;;">Mensagem: ${mensagem}</p>
                               </td>
                           </tr>
                       </table>
