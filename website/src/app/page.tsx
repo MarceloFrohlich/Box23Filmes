@@ -1,7 +1,14 @@
+import Banner from "./components/banner";
+import Contato from "./components/contato";
+import Sobre from "./components/sobre";
+
 export default function Home() {
   return (
     <main className=''>
-      <h1>Inicio</h1>
+      <Banner/>
+      <Sobre />
+      <Contato />
+
     </main>
   );
 }

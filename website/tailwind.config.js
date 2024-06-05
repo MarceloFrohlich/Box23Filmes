@@ -9,7 +9,11 @@ module.exports = {
     "./src/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      backgroundImage: {
+        logoBox23: "url('/assets/boxLogo.png')",
+      }
+    },
   },
   plugins: [],
 }
