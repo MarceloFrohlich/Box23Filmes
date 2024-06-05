@@ -9,11 +9,10 @@ const Cases: React.FC = () => {
 
             <div className="w-full flex justify-center">
                 <div className="flex w-4/6 flex-wrap justify-around">
-                    <CaseItem />
-                    <CaseItem />
-                    <CaseItem />
-                    <CaseItem />                    
-                    
+                    <CaseItem titulo="Caxias Ensemble" fundoImage="bg-firstCase"/>
+                    <CaseItem titulo="Mesa de Arte" fundoImage="bg-firstCase"/>
+                    <CaseItem titulo="Arte no Muro" fundoImage="bg-firstCase"/>
+                    <CaseItem titulo="Encontro de Motos no Sapatão" fundoImage="bg-firstCase"/>                    
                 </div>
             </div>
         </section>
