@@ -1,12 +1,11 @@
 const CaseItem: React.FC = () => {
     return (
-        <section className="border-2 border-slate-600 min-w-[30%] h-52 m-3 shadow-lg">
-            <div className="bg-firstCase bg-cover bg-center">
-                
-            </div> 
-            {/* <div className="w-full bg-black/30">
-                <h1>texto</h1>
-            </div> */}
+        <section className="min-w-[30%] h-52 m-3 shadow-lg">
+            <div className="bg-firstCase bg-cover bg-center h-full flex flex-col justify-end">
+                <div className="w-full bg-white/30 h-12 flex justify-center items-center">
+                    <h1 className="text-gray-200">texto</h1>
+                </div>
+            </div>
         </section>
 
     )
