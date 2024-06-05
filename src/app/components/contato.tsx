@@ -2,33 +2,9 @@
 import { LuPhone } from "react-icons/lu";
 import { CiMail } from "react-icons/ci";
 import { SlLocationPin } from "react-icons/sl";
-import { submitEmail, receive } from "../hooks/api";
-
-interface EmailSendData {
-    nome: string | FormDataEntryValue | null;
-    telefone: string | FormDataEntryValue | null;
-    mensagem: string | FormDataEntryValue | null;
-    email: string | FormDataEntryValue | null;
-}
+import { sendEmailAction } from "../hooks/actions";
 
 const Contato: React.FC = () => {
-
-   async function sendEmailAction(formData: FormData) {
-        const email:EmailSendData = {
-            nome: formData.get('nome'),
-            email: formData.get('email'),
-            mensagem: formData.get('mensagem'),
-            telefone: formData.get('telefone')
-        }
-        console.log(email)
-        const response = await submitEmail(email)
-        if (response.request.status === 200) {
-            console.log('Email enviado com sucesso!')
-        }
-        else {
-            console.log('Deu merda')
-        }
-    }
 
     return (
         <section className="w-full my-6 text-gray-200">

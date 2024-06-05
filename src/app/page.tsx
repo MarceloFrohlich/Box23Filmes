@@ -4,7 +4,7 @@ import Sobre from "./components/sobre";
 
 export default function Home() {
   return (
-    <main className=''>
+    <main>
       <Banner/>
       <Sobre />
       <Contato />
