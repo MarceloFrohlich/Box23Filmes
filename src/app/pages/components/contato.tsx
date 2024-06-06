@@ -2,13 +2,30 @@
 import { LuPhone } from "react-icons/lu";
 import { CiMail } from "react-icons/ci";
 import { SlLocationPin } from "react-icons/sl";
-import { sendEmailAction } from "../hooks/actions";
+import FormSubmitButton from "./formSubmitButton";
+import { submitEmail } from "../../hooks/api";
 
-interface IContato{
+interface IContato {
     id: string
 }
 
-const Contato: React.FC<IContato> = ({id}) => {
+const Contato: React.FC<IContato> = ({ id }) => {
+
+    async function sendEmailAction(formData: FormData) {
+        const email = {
+            nome: formData.get('nome'),
+            email: formData.get('email'),
+            mensagem: formData.get('mensagem'),
+            telefone: formData.get('telefone')
+        }
+        const response = await submitEmail(email)
+        if (response.request.status === 200) {
+            console.log('Email enviado com sucesso!')
+        }
+        else {
+            console.log(response)
+        }
+    }
 
     return (
         <section id={id} className="w-full my-6 text-gray-200">
@@ -61,6 +78,7 @@ const Contato: React.FC<IContato> = ({id}) => {
                                 name="telefone"
                                 className="bg-zinc-800 border rounded-lg p-2"
                                 type="text"
+
                             />
                         </div>
                     </div>
@@ -83,9 +101,7 @@ const Contato: React.FC<IContato> = ({id}) => {
                     </div>
 
                     <div className="flex justify-end">
-                        <button className="border py-2 px-8 rounded-lg hover:bg-gray-200 hover:text-zinc-800 duration-300">
-                            Enviar
-                        </button>
+                        <FormSubmitButton action="Enviar" waiting="Enviando" />
                     </div>
                 </form>
             </div>

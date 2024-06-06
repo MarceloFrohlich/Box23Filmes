@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import Logo from '../../../public/assets/boxLogo.png'
+import Logo from '../../../../public/assets/boxLogo.png'
 import { SlSocialInstagram } from "react-icons/sl";
 
 const Header:React.FC = () => {

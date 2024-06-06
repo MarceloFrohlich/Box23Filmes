@@ -1,4 +1,4 @@
-import CaseItem from "../../components/caseItem"
+import CaseItem from '../components/caseItem'
 
 const Cases: React.FC = () => {
     return (

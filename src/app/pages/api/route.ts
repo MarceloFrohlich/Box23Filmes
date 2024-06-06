@@ -73,9 +73,3 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: 'Erro ao enviar email' }, { status: 500 });
   }
 }
-
-// Manipulador para requisições GET (opcional)
-export async function GET() {
-  console.log('Método é GET');
-  return NextResponse.json({ message: 'GET request received' }, { status: 200 });
-}

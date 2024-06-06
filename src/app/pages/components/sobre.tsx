@@ -1,5 +1,5 @@
 import Image from "next/image"
-import sobre from '../../../public/assets/sobre.png'
+import sobre from '../../../../public/assets/sobre.png'
 
 const Sobre: React.FC = () => {
     return (
