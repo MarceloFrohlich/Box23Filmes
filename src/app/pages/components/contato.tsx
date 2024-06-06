@@ -4,13 +4,14 @@ import { CiMail } from "react-icons/ci";
 import { SlLocationPin } from "react-icons/sl";
 import FormSubmitButton from "./formSubmitButton";
 import { submitEmail } from "../../hooks/api";
+import { useState } from "react";
 
 interface IContato {
     id: string
 }
 
 const Contato: React.FC<IContato> = ({ id }) => {
-
+    const [success, setSuccess] = useState<boolean>(false)
     async function sendEmailAction(formData: FormData) {
         const email = {
             nome: formData.get('nome'),
@@ -21,6 +22,7 @@ const Contato: React.FC<IContato> = ({ id }) => {
         const response = await submitEmail(email)
         if (response.request.status === 200) {
             console.log('Email enviado com sucesso!')
+            setSuccess(true)
         }
         else {
             console.log(response)
@@ -101,7 +103,13 @@ const Contato: React.FC<IContato> = ({ id }) => {
                     </div>
 
                     <div className="flex justify-end">
-                        <FormSubmitButton action="Enviar" waiting="Enviando" />
+                        {!success ?
+                            <FormSubmitButton action="Enviar" waiting="Enviando" />
+                            :
+                            <div className="border py-2 px-8 rounded-lg hover:bg-gray-200 hover:text-zinc-800 duration-300">
+                                Sucesso!
+                            </div>
+                        }
                     </div>
                 </form>
             </div>
