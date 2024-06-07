@@ -12,7 +12,7 @@ const Cases: React.FC = () => {
                     <CaseItem titulo="Caxias Ensemble" fundoImage="bg-firstCase"/>
                     <CaseItem titulo="Mesa de Arte" fundoImage="bg-firstCase"/>
                     <CaseItem titulo="Arte no Muro" fundoImage="bg-firstCase"/>
-                    <CaseItem titulo="Encontro de Motos no Sapatão" fundoImage="bg-firstCase"/>                    
+                    <CaseItem titulo="Encontro de Motos" fundoImage="bg-firstCase"/>                    
                 </div>
             </div>
         </section>

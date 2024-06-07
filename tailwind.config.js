@@ -18,7 +18,7 @@ module.exports = {
     },
     extend: {
       backgroundImage: {
-        firstCase: "url('/assets/trajetoria1.jpeg')",
+        firstCase: "url('/assets/trajetoria1.jpeg')"
       },
       keyframes: {
         "accordion-down": {
